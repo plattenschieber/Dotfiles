@@ -1,0 +1,91 @@
+# [Created by task 2.4.0.beta1 10/2/2014 12:05:44]
+# Taskwarrior program configuration file.
+# For more documentation, see http://taskwarrior.org or try 'man task', 'man task-color',
+# 'man task-sync' or 'man taskrc'
+
+# Here is an example of entries that use the default, override and blank values
+#   variable=foo   -- By specifying a value, this overrides the default
+#   variable=      -- By specifying no value, this means no default
+#   #variable=foo  -- By commenting out the line, or deleting it, this uses the default
+
+# Use the command 'task show' to see all defaults and overrides
+
+# Files
+data.location=/Users/hans/.task
+
+# some further configuration
+default.command=next
+dateformat=d.m.Y
+search.case.sensitive=no #search as I like
+
+# task server configuration
+taskd.certificate=\/Users\/hans\/.task\/jm.cert.pem
+taskd.key=\/Users\/hans\/.task\/jm.key.pem
+taskd.ca=\/Users\/hans\/.task\/ca.cert.pem
+taskd.server=canis.uberspace.de:63589
+taskd.credentials=Home\/Jeronim Morina\/211a32a8-a329-4320-867c-cf66f3517120
+taskd.trust=ignore hostname
+
+# calendar 
+include /usr/local/share/doc/task/rc/holidays.de-DE.rc
+weekstart=Monday
+calendar.details=full
+
+# colour stuff
+color.alternate=on color233
+color.summary.bar=black on rgb141
+color.summary.background=white on color0
+color.pri.H=color255
+color.pri.M=color247
+color.pri.L=color240
+color.overdue=white on red
+color.label.sort=red
+
+# new next report
+report.next2.filter=status:pending limit:page -BLOCKED pro.not:Film and pro.not:ToBuy and pro.not:ToEat and pro.not:ToSee and pro.not:Bike and pro.not:ToSell and pro.not:Gifts   
+report.next2.columns=id,project,priority,due,start.active,entry.age,urgency,description,tags
+report.next2.labels=ID,Proj,Pri,Due,A,Age,Urg,Description,Tags
+report.next2.limit=10
+report.next.filter=status:pending -BLOCKED pro.not:ToSee pro.not:Film -film -music limit:page 
+report.next.columns=id,project,priority,due,start.active,entry.age,urgency,description,tags
+report.next.labels=ID,Proj,Pri,Due,A,Age,Urg,Description,Tags
+report.next.limit=10
+
+# task Q1
+report.q1.description=Quadrant 1: important and urgent
+report.q1.filter=limit:page status:pending and prio:H and +urt
+report.q1.columns=start.active,id,project,urgency,description,due,tags
+report.q1.labels=A,ID,Proj,Urg,Description,Due,Tags
+report.q1.sort=due+,urgency+,priority-
+# task Q2
+report.q2.description=Quadrant 2: important and unurgent
+report.q2.filter=limit:page status:pending and prio:H and +unu
+report.q2.columns=start.active,id,project,urgency,description,due,tags
+report.q2.labels=A,ID,Proj,Urg,Description,Due,Tags
+report.q2.sort=due+,urgency+,priority-
+# task Q3
+report.q3.description=Quadrant 3: unimportant and urgent
+report.q3.filter=limit:page status:pending and prio:L and +urt
+report.q3.columns=start.active,id,project,urgency,description,due,tags
+report.q3.labels=A,ID,Proj,Urg,Description,Due,Tags
+report.q3.sort=due+,urgency+,priority- 
+# task Q4
+report.q4.description=Quadrant 4: unimportant and unurgent
+report.q4.filter=limit:page status:pending and prio:L and +unu
+report.q4.columns=start.active,id,project,urgency,description,due,tags
+report.q4.labels=A,ID,Proj,Urg,Description,Due,Tags
+report.q4.sort=due+,urgency+,priority- 
+# inbox
+report.inbox.description=INBOX report
+#report.inbox.filter=limit:page dep: status:pending -maybe -idea -music -film and '( ( prio.not:H and prio.not:L ) or (-urg and -unu))'
+report.inbox.filter=status:pending -urt -unu -maybe -idea -music -film 
+report.inbox.columns=id,project,description,entry.age,tags
+report.inbox.labels=ID,Proj,Description,Age,Tags
+report.inbox.sort=entry+
+
+# task buy
+report.ToBuy.description=To Buy List
+report.ToBuy.filter=limit:page status:pending and pro:ToBuy
+report.ToBuy.columns=start.active,id,project,urgency,description,due,tags
+report.ToBuy.labels=A,ID,Proj,Urg,Description,Due,Tags
+report.ToBuy.sort=due+,urgency+,priority- 
