@@ -45,12 +45,7 @@ color.overdue=rgb550
 include /usr/local/share/doc/task/rc/dark-blue-256.theme
 #journal.time=on
 
-
-# new next report
-report.next2.filter=status:pending limit:page -BLOCKED pro.not:Film and pro.not:ToBuy and pro.not:ToEat and pro.not:ToSee and pro.not:Bike and pro.not:ToSell and pro.not:Gifts   
-report.next2.columns=id,project,priority,due,start.active,entry.age,urgency,description,tags
-report.next2.labels=ID,Proj,Pri,Due,A,Age,Urg,Description,Tags
-report.next2.limit=10
+# update next report
 report.next.filter=status:pending -BLOCKED pro.not:ToSee pro.not:Film -film -music limit:page 
 report.next.columns=id,project,priority,due,start.active,entry.age,urgency,description,tags
 report.next.labels=ID,Proj,Pri,Due,A,Age,Urg,Description,Tags
@@ -87,10 +82,3 @@ report.inbox.filter=status:pending -urt -unu -maybe -idea -music -film
 report.inbox.columns=id,project,description,entry.age,tags
 report.inbox.labels=ID,Proj,Description,Age,Tags
 report.inbox.sort=entry+
-
-# task buy
-report.ToBuy.description=To Buy List
-report.ToBuy.filter=limit:page status:pending and pro:ToBuy
-report.ToBuy.columns=start.active,id,project,urgency,description,due,tags
-report.ToBuy.labels=A,ID,Proj,Urg,Description,Due,Tags
-report.ToBuy.sort=due+,urgency+,priority- 
