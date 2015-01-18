@@ -40,6 +40,11 @@ color.pri.M=color247
 color.pri.L=color240
 color.overdue=white on red
 color.label.sort=red
+color.due.today=rgb550
+color.overdue=rgb550
+include /usr/local/share/doc/task/rc/dark-blue-256.theme
+#journal.time=on
+
 
 # new next report
 report.next2.filter=status:pending limit:page -BLOCKED pro.not:Film and pro.not:ToBuy and pro.not:ToEat and pro.not:ToSee and pro.not:Bike and pro.not:ToSell and pro.not:Gifts   
