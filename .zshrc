@@ -54,6 +54,8 @@ source $ZSH/oh-my-zsh.sh
 export PATH="/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/usr/local/texlive/2013/bin/universal-darwin"
 export PATH=/usr/local/bin:/usr/local/sbin:$PATH
 export PATH=/opt/local/bin:/opt/local/sbin:$PATH
+export MONO_GAC_PREFIX="/usr/local"
+
 
 JAVA_HOME=$(/usr/libexec/java_home)
 export JAVA_HOME
