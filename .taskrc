@@ -83,3 +83,4 @@ report.inbox.filter=status:pending -urt -unu -maybe -idea -music -film
 report.inbox.columns=id,project,description,entry.age,tags
 report.inbox.labels=ID,Proj,Description,Age,Tags
 report.inbox.sort=entry+
+urgency.user.tag.urt.coefficient=4.5
