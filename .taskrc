@@ -55,8 +55,8 @@ report.next.limit=10
 # task Q1
 report.q1.description=Quadrant 1: important and urgent
 report.q1.filter=limit:page status:pending -BLOCKED and prio:H and +urt
-report.q1.columns=start.active,id,project,urgency,description,due,tags
-report.q1.labels=A,ID,Proj,Urg,Description,Due,Tags
+report.q1.columns=start.active,id,project,urgency,description,due,tags,entry.age,due.countdown
+report.q1.labels=A,ID,Proj,Urg,Description,Due,Tags,Age,Overdue
 report.q1.sort=due+,urgency+,priority-
 # task Q2
 report.q2.description=Quadrant 2: important and unurgent
