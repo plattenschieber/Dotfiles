@@ -47,32 +47,32 @@ include /usr/local/share/doc/task/rc/antiglare.theme
 #journal.time=on
 
 # update next report
-report.next.filter=status:pending -BLOCKED pro.not:ToSee pro.not:Film -film -music limit:page 
+report.next.filter=status:pending -BLOCKED +READY pro.not:ToSee pro.not:Film -film -music limit:page 
 report.next.columns=id,project,priority,due,start.active,entry.age,urgency,description,tags
 report.next.labels=ID,Proj,Pri,Due,A,Age,Urg,Description,Tags
 report.next.limit=10
 
 # task Q1
 report.q1.description=Quadrant 1: important and urgent
-report.q1.filter=limit:page status:pending -BLOCKED and prio:H and +urt
+report.q1.filter=limit:page status:pending -BLOCKED +READY and prio:H and +urt
 report.q1.columns=start.active,id,project,urgency,description,due,tags,entry.age,due.countdown
 report.q1.labels=A,ID,Proj,Urg,Description,Due,Tags,Age,Overdue
 report.q1.sort=due+,urgency+,priority-
 # task Q2
 report.q2.description=Quadrant 2: important and unurgent
-report.q2.filter=limit:page status:pending -BLOCKED and prio:H and +unu
+report.q2.filter=limit:page status:pending -BLOCKED +READY and prio:H and +unu
 report.q2.columns=start.active,id,project,urgency,description,due,tags
 report.q2.labels=A,ID,Proj,Urg,Description,Due,Tags
 report.q2.sort=due+,urgency+,priority-
 # task Q3
 report.q3.description=Quadrant 3: unimportant and urgent
-report.q3.filter=limit:page status:pending -BLOCKED and prio:L and +urt
+report.q3.filter=limit:page status:pending -BLOCKED +READY and prio:L and +urt
 report.q3.columns=start.active,id,project,urgency,description,due,tags
 report.q3.labels=A,ID,Proj,Urg,Description,Due,Tags
 report.q3.sort=due+,urgency+,priority- 
 # task Q4
 report.q4.description=Quadrant 4: unimportant and unurgent
-report.q4.filter=limit:page status:pending -BLOCKED and prio:L and +unu
+report.q4.filter=limit:page status:pending -BLOCKED +READY and prio:L and +unu
 report.q4.columns=start.active,id,project,urgency,description,due,tags
 report.q4.labels=A,ID,Proj,Urg,Description,Due,Tags
 report.q4.sort=due+,urgency+,priority- 
