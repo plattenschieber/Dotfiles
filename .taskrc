@@ -15,7 +15,7 @@ data.location=/Users/hans/.task
 
 # some further configuration
 default.command=next
-dateformat=d.m.Y
+dateformat=D.M.y H:M
 search.case.sensitive=no #search as I like
 
 # task server configuration
