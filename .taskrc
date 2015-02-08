@@ -79,7 +79,7 @@ report.q4.sort=due+,urgency+,priority-
 # inbox
 report.inbox.description=INBOX report
 #report.inbox.filter=limit:page dep: status:pending -maybe -idea -music -film and '( ( prio.not:H and prio.not:L ) or (-urg and -unu))'
-report.inbox.filter=status:pending -urt -unu -maybe -idea -music -film 
+report.inbox.filter=(status:pending or status:waiting) -urt -unu -maybe -idea -music -film 
 report.inbox.columns=id,project,description,entry.age,tags
 report.inbox.labels=ID,Proj,Description,Age,Tags
 report.inbox.sort=entry+
