@@ -83,5 +83,5 @@ report.inbox.filter=(status:pending or status:waiting) -urt -unu -maybe -idea -m
 report.inbox.columns=id,project,description,entry.age,tags
 report.inbox.labels=ID,Proj,Description,Age,Tags
 report.inbox.sort=entry+
-urgency.user.tag.urt.coefficient=4.5
+urgency.user.tag.urt.coefficient=8.5
 report.list.sort=start-,due+,project+,urgency-
