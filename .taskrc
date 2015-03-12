@@ -43,7 +43,7 @@ color.label.sort=red
 color.due.today=rgb550
 color.overdue=rgb550
 #include /usr/local/share/doc/task/rc/dark-blue-256.theme
-include /usr/local/share/doc/task/rc/antiglare.theme
+include /usr/local/share/doc/task/rc/light-256.theme
 #journal.time=on
 
 # update next report

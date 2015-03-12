@@ -56,8 +56,11 @@ let g:tex_flavor='latex'
 " Put your stuff after this line
 
 "colorscheme morning
-set background=dark
+set background=light
 colorscheme solarized
+let g:solarized_termcolors=256
+let g:solarized_visibility =  "high"
+
 
 " backspace key behavior
 set backspace=indent
