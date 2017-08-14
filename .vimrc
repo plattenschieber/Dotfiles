@@ -2,33 +2,59 @@ set nocompatible              " be iMproved, required
 filetype off                  " required
 
 " set the runtime path to include Vundle and initialize
-set rtp+=~/.vim/bundle/vundle/
-call vundle#rc()
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
 " alternatively, pass a path where Vundle should install bundles
 "let path = '~/some/path/here'
 "call vundle#rc(path)
 
 " let Vundle manage Vundle, required
-Bundle 'gmarik/vundle'
+Plugin 'VundleVim/Vundle.vim'
 
 
 " The following are examples of different formats supported.
 " Keep bundle commands between here and filetype plugin indent on.
 " scripts on GitHub repos
-Bundle 'tpope/vim-fugitive'
+Plugin 'tpope/vim-fugitive'
 " surround helps surrounding tags and other stuff with arbitrary cool stuff
-Bundle 'tpope/vim-surround'
-Bundle 'scrooloose/syntastic'
-Bundle 'Lokaltog/vim-easymotion'
+Plugin 'tpope/vim-surround'
+Plugin 'scrooloose/syntastic'
+Plugin 'Lokaltog/vim-easymotion'
 " The sparkup vim script is in a subdirectory of this repo called vim.
 " Pass the path to set the runtimepath properly.
-Bundle 'rstacruz/sparkup', {'rtp': 'vim/'}
+Plugin 'rstacruz/sparkup', {'rtp': 'vim/'}
 " scripts from http://vim-scripts.org/vim/scripts.html
-Bundle 'L9'
-Bundle 'FuzzyFinder'
+Plugin 'L9'
+Plugin 'FuzzyFinder'
 " scripts not on GitHub
-Bundle 'git://git.wincent.com/command-t.git'
-Bundle 'altercation/vim-colors-solarized' 
+Plugin 'git://git.wincent.com/command-t.git'
+Plugin 'altercation/vim-colors-solarized' 
+
+" Taskwarrior and recommended plugins plus settings
+Bundle 'farseer90718/vim-taskwarrior'
+Plugin 'bling/vim-airline'
+Plugin 'Shougo/unite.vim'
+" Snippets are separated from the engine. Add this if you want them:
+Plugin 'honza/vim-snippets'
+Plugin 'Valloric/YouCompleteMe'
+" Visual increment
+Plugin 'triglav/vim-visual-increment'
+" Have a look over all function
+Plugin 'hari-rangarajan/CCTree' 
+
+" Track the engine.
+Plugin 'SirVer/ultisnips'
+" if you use Vundle, load plugins:
+Plugin 'ervandew/supertab'
+
+" this is the last Plugin Vundle calls 
+" vim-latex 
+Plugin 'vim-latex/vim-latex'
+call vundle#end()            " required
+
+
+" Taskwarrior
+let g:task_rc_override = 'rc.defaultwidth=0'
 
 filetype plugin indent on     " required
 " OPTIONAL: This enables automatic indentation as you type.
@@ -91,6 +117,12 @@ if has('gui_running')
 endif
 set laststatus=2
 
+"folding settings
+set foldmethod=indent   "fold based on indent
+set foldnestmax=10      "deepest fold is 10 levels
+set nofoldenable        "dont fold by default
+set foldlevel=1         "this is just what i use
+
  
 set tabstop=4       " The number of spaces count for a TAB.
 set softtabstop=4   " The number of spaces inserted when typing TAB. If not expandtab, type TAB twice, will get one TAB.
@@ -120,25 +152,30 @@ nnoremap <leader>1 yypVr=
 " set leader key to , 
 let mapleader=","
 
-
+" airline settings
+" Enable the list of buffers
+let g:airline#extensions#tabline#enabled = 1
+" Show just the filename
+let g:airline#extensions#tabline#fnamemod = ':t'
 
  " vertical paragraph-movement
 nmap <C-J> }
 nmap <C-K> {
 
-" Snippets are separated from the engine. Add this if you want them:
-Bundle 'honza/vim-snippets'
-Bundle 'Valloric/YouCompleteMe'
-
-" Track the engine.
-Bundle 'SirVer/ultisnips'
-" Trigger configuration. Do not use <tab> if you use https://github.com/Valloric/YouCompleteMe.
-let g:UltiSnipsExpandTrigger="<tab>"
-let g:UltiSnipsJumpForwardTrigger="<c-b>"
-let g:UltiSnipsJumpBackwardTrigger="<c-z>"
 
 " If you want :UltiSnipsEdit to split your window.
 let g:UltiSnipsEditSplit="vertical"
+"
+" make YCM compatible with UltiSnips (using supertab)
+let g:ycm_key_list_select_completion = ['<C-n>', '<Down>']
+let g:ycm_key_list_previous_completion = ['<C-p>', '<Up>']
+let g:SuperTabDefaultCompletionType = '<C-n>'
+
+" better key bindings for UltiSnipsExpandTrigger
+let g:UltiSnipsExpandTrigger = "<tab>"
+let g:UltiSnipsJumpForwardTrigger = "<tab>"
+let g:UltiSnipsJumpBackwardTrigger = "<s-tab>"
+
 
 " Vertical splits via ,w and moving in splits via ctrl + moving 
 nnoremap <leader>w <C-w>v<C-w>l
@@ -153,4 +190,5 @@ hi CursorColumn cterm=NONE ctermbg=darkred ctermfg=white guibg=darkred guifg=whi
 nnoremap <Leader>c :set cursorline! cursorcolumn!<CR>
 highlight Pmenu ctermfg=2 ctermbg=3 guifg=#ffffff guibg=#0000ff
 let g:ycm_global_ycm_extra_conf="~/.ycm_extra_conf.py"
+let g:ycm_path_to_python_interpreter = "/usr/bin/python"
 
