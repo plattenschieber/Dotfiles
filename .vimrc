@@ -86,6 +86,8 @@ set background=light
 colorscheme solarized
 let g:solarized_termcolors=256
 let g:solarized_visibility =  "high"
+" this needs to be done for enabling solarized in vim terminal mode
+set t_Co=16
 
 
 " backspace key behavior
