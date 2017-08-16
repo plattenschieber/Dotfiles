@@ -191,4 +191,8 @@ nnoremap <Leader>c :set cursorline! cursorcolumn!<CR>
 highlight Pmenu ctermfg=2 ctermbg=3 guifg=#ffffff guibg=#0000ff
 let g:ycm_global_ycm_extra_conf="~/.ycm_extra_conf.py"
 let g:ycm_path_to_python_interpreter = "/usr/bin/python"
+" change standard view of :Sex to NerdTree like one
+let g:netrw_liststyle = 3
+let g:netrw_browse_split = 2
+let g:netrw_winsize = 25
 
