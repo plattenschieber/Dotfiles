@@ -85,3 +85,7 @@ report.inbox.labels=ID,Proj,Description,Age,Tags
 report.inbox.sort=entry+
 urgency.user.tag.urt.coefficient=8.5
 report.list.sort=start-,due+,project+,urgency-
+
+
+pomodoro.defaultFilter=pri:H
+
