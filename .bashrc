@@ -1,5 +1,3 @@
-shopt -s no_empty_cmd_completion'
-
 PROMPT_COMMAND="history -a; history -r"
 export HISTFILESIZE=99999
 export HISTSIZE=99999
