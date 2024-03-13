@@ -2,7 +2,6 @@ PROMPT_COMMAND="history -a; history -r"
 export HISTFILESIZE=99999
 export HISTSIZE=99999
 HISTCONTROL=ignoredups:erasedups
-shopt -s histappend
 
 alias cd..='cd ..'
 alias ..='cd ..'
@@ -13,7 +12,7 @@ alias cp='cp -i'
 alias ln='ln -i'
 alias l='ls -lah --color=auto'
 alias '..=cd ..'
-alias 'gst=git status
+alias 'gst=git status'
 
 export COLORED_FAIL="\e[31mFAILED\e[32m:"
 export COLORED_WARN="\e[34mWARN\e[33m:"
